@@ -6,7 +6,7 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 02:28:07 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/10 16:56:39 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/10 21:33:27 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -400,6 +400,7 @@ flag_type		ft_arg_conv(char *tab)
 			}
 			flag.conv_num = -1;
 			tmp = count--;
+			//printf("passe ici flag.c est [%c] et flag.tab est [%s]\n", flag.c, flag.tab);
 			return (flag);
 		}
 	}

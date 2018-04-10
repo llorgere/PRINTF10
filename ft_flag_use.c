@@ -484,7 +484,11 @@ char	*ft_nowipr(char *str, flag_type flag, int len)
 			return (ft_nowinopr(str, flag, len));
 		else
 		{
-			tab = ft_strndup(str, flag.preci);
+			//printf("passe ici\n");
+			if (flag.conv_num == 15)
+				tab = ft_strndups((unsigned char*)str, flag.preci);
+			else
+				tab = ft_strndup(str, flag.preci);
 			free(str);
 			return (ft_nowinopr(tab, flag, flag.preci));
 		}
@@ -537,7 +541,7 @@ char	*ft_nowipr(char *str, flag_type flag, int len)
 
 char	*ft_nowinopr(char *str, flag_type flag, int len)
 {
-//	printf("test de nowinopr et str est[%s]\n", str);
+//	printf("test de nowinopr et len est[%d]\n", len);
 	if (flag.dies == 1)
 	{
 		return (ft_add_dies(str, flag, len));
@@ -567,7 +571,7 @@ char	*ft_wipr(char *str, flag_type flag, int len)
 		flag.space = 0;
 		flag.plus = 0;
 		flag.dies = 0;
-//		printf("test de wipr 2 tmp est [%s]\n", tmp);
+//		printf("test de wipr 2 len tmp est [%zu]\n", ft_strlen(tmp));
 //		printf("test de wipr 3\n");
 		return (ft_winopr(tmp, flag, ft_strlen(tmp)));
 	}
@@ -579,7 +583,7 @@ char	*ft_flag_use(char *str, flag_type flag)
 
 //	printf("test boucle 1\n");
 	len = ft_strlen(str);
-//	printf("test boucle 2\n");
+	//printf("len est %d\n", len);
 	flag = ft_flag_adjust(flag);
 //	printf("test des valeurs des flags\ncn : [%d] | wi : [%d] | pr : [%d] | - : [%d] | + : [%d] | # : [%d] | 0 : [%d] | sp : [%d] | . : [%d] | et str est [%s]\n", flag.conv_num, flag.width, flag.preci, flag.minus, flag.plus, flag.dies, flag.zero, flag.space, flag.point, str);
 /*	if (flag.conv_num == 6 || flag.conv_num == 14)

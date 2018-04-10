@@ -46,7 +46,8 @@ int		ft_printf(const char *format, ...)
 		else if (wiit.pos_conv[i] == 1)
 		{
 			flag = ft_arg_conv(wiit.tab[i]); 
-			cur_arg = ft_what_type(flag.conv_num, ap, &flag);
+			if (flag.conv_num != -1)
+				cur_arg = ft_what_type(flag.conv_num, ap, &flag);
 			if(flag.conv_num == -1)
 			{
 				if (flag.tab == NULL)
@@ -55,7 +56,7 @@ int		ft_printf(const char *format, ...)
 				{
 					//cur_arg = ft_strdup(flag.tab);
 					cur_arg = ft_error_flag(flag);
-				//	printf("%s", cur_arg);
+					//printf("conv_num est %d et cur_arg est %s et width est %d\n", flag.conv_num,  cur_arg, flag.width);
 			//		free(flag.tab);
 					//free(cur_arg);
 				}
@@ -150,7 +151,7 @@ int		ft_printf(const char *format, ...)
 			}
 			else
 			{
-			//	printf("passe ici 3 \n");
+				//printf("passe ici 3 \n");
 				cur_arg = ft_flag_use(cur_arg, flag);
 				ret = ret + ft_strlen(cur_arg);
 				if(!ret_tab)
