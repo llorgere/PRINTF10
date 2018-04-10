@@ -82,8 +82,10 @@ int		ft_printf(const char *format, ...)
 					ret_wide = ret;
 				}
 			}
+			/*
 			else if ((flag.W > -1 && flag.preci == -1) || (flag.W > -1 && flag.preci > flag.W))
 			{
+				printf("passe ici 3 \n");
 				free(cur_arg);
 				while(wiit.tab[i])
 				{
@@ -101,8 +103,16 @@ int		ft_printf(const char *format, ...)
 				}
 				return (-1);
 			}
-			else if (flag.conv_num == 6 || flag.conv_num == 14)
+			*/
+			else if ((flag.conv_num == 6 || flag.conv_num == 14 ) && flag.W == -1)
 			{
+		/*		if (flag.W > -1)
+				{
+					free(cur_arg);
+					return(-1);
+				}
+		*/		
+			//	printf("passe ici 3 \n");
 				spec = ft_special_c(cur_arg, flag);
 				if(!(spec.tab))
 					return (-1);
@@ -140,6 +150,7 @@ int		ft_printf(const char *format, ...)
 			}
 			else
 			{
+			//	printf("passe ici 3 \n");
 				cur_arg = ft_flag_use(cur_arg, flag);
 				ret = ret + ft_strlen(cur_arg);
 				if(!ret_tab)

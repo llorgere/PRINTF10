@@ -6,7 +6,7 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 19:03:54 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/09 19:07:10 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/10 17:49:12 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <wchar.h>
 # include <stdio.h>
 # include <limits.h>
+# include <locale.h>
 
 typedef struct
 {
@@ -207,12 +208,12 @@ void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *New);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_chardup(unsigned char s);
 char				*ft_wchardup(wchar_t *s, flag_type *flag);
-char				*ft_wintdup(wchar_t s, flag_type *flag);
+char				*ft_wintdup(wint_t s, flag_type *flag);
 char				*ft_p_conv(long long unsigned int s, flag_type flag);
 
 #endif

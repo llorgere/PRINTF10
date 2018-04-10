@@ -8,13 +8,20 @@ int		main(void)
 
 	ft_p = 0;
 	p = 0;
-/*	printf("%.0p, %.p", 0, 0);
-	printf("%.5p", 0);
-	printf("%2.9p", 1234);
-	printf("%2.9p", 1234567);
-	printf("%D", LONG_MIN);
-	printf("{%05p}", 0);
-//	printf("{%05p}", &pointer_valueLargerThanMinWidth_zeroFlag);
+	//char*test;
+	char* l = setlocale(LC_ALL, "");
+
+	if (l	== NULL)
+		printf("Locale not set\n");
+	else
+		printf("Locale set to %s\n", l);
+	/*	printf("%.0p, %.p", 0, 0);
+		printf("%.5p", 0);
+		printf("%2.9p", 1234);
+		printf("%2.9p", 1234567);
+		printf("%D", LONG_MIN);
+		printf("{%05p}", 0);
+	//	printf("{%05p}", &pointer_valueLargerThanMinWidth_zeroFlag);
 	printf("%S", L"米");
 	printf("%S", L"我是一只猫。");
 	printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S",
@@ -83,12 +90,12 @@ int		main(void)
 	ft_printf("%2.9p", 1234567);
 	ft_printf("%D", LONG_MIN);
 	ft_printf("{%05p}", 0);
-//	ft_printf("{%05p}", &pointer_valueLargerThanMinWidth_zeroFlag);
+	//	ft_printf("{%05p}", &pointer_valueLargerThanMinWidth_zeroFlag);
 	ft_printf("%S", L"米");
 	ft_printf("%S", L"我是一只猫。");
 	ft_printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S",
-	L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
-	L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");	
+			L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
+			L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");	
 	ft_printf("a%Sb%sc%S", L"我", "42", L"猫");
 	ft_printf("{%S}", NULL);
 	ft_printf("{%-15Z}", 123);
@@ -143,14 +150,14 @@ int		main(void)
 	ft_printf("{%05.Z}");
 	ft_printf("{%05.S}", L"42 c est cool");
 	ft_printf("{% S}", NULL);
-//	ft_printf("{% s}", NULL);
-*/	//printf("[%d]", printf("{%30S}", L"我是一只猫。"));
-//	printf("[%d]", printf("{%-30S}", L"我是一只猫。"));
-//	printf("[%d]", printf("{%030S}", L"我是一只猫。"));
-/*	printf("[%d]", ft_printf("{%30S}", L"我是一只猫。"));
-	printf("[%d]", ft_printf("{%-30S}", L"我是一只猫。"));
-	printf("[%d]", ft_printf("{%030S}", L"我是一只猫。"));
-//	printf("{%030S}", L"我是一只猫。");
+	//	ft_printf("{% s}", NULL);
+	*/	//printf("[%d]", printf("{%30S}", L"我是一只猫。"));
+	//	printf("[%d]", printf("{%-30S}", L"我是一只猫。"));
+	//	printf("[%d]", printf("{%030S}", L"我是一只猫。"));
+	/*	printf("[%d]", ft_printf("{%30S}", L"我是一只猫。"));
+		printf("[%d]", ft_printf("{%-30S}", L"我是一只猫。"));
+		printf("[%d]", ft_printf("{%030S}", L"我是一只猫。"));
+	//	printf("{%030S}", L"我是一只猫。");
 	ft_printf("{%030S}", L"我是一只猫。");
 	printf("[%d]", printf("%S", L"米"));
 	printf("[%d]", printf("%S", L"我是一只猫。"));
@@ -164,69 +171,98 @@ int		main(void)
 	L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
 	L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L""));
 	printf("[%d]", ft_printf("a%Sb%sc%S", L"我", "42", L"猫"));
-*/	//printf("[%d]", printf("%hhS, %hhS", 0, L"米米"));
-//	printf("[%d]", printf("%d, %hhS", 198, L"米米"));
-//	printf("[%d]", printf("%hhC, %hhC", 0, L'米'));
-//	printf("[%d]", ft_printf("%hhS, %hhS", 0, L"米米"));
-//	printf("[%d]", ft_printf("%hhC, %hhC", 0, L'米'));
-//	printf("[%d]", printf("%S", L"我是一只猫。"));
-//	printf("[%d]", ft_printf("{%S}", L"我是一只猫。"));
-//	printf("[%d]", printf("%030S", L"我是一只猫。"));
-//	printf("[%d]", ft_printf("{%030S}", L"我是一只猫。"));
+	*/	//printf("[%d]", printf("%hhS, %hhS", 0, L"米米"));
+	//	printf("[%d]", printf("%d, %hhS", 198, L"米米"));
+	//	printf("[%d]", printf("%hhC, %hhC", 0, L'米'));
+	//	printf("[%d]", ft_printf("%hhS, %hhS", 0, L"米米"));
+	//	printf("[%d]", ft_printf("%hhC, %hhC", 0, L'米'));
+	//	printf("[%d]", printf("%S", L"我是一只猫。"));
+	//	printf("[%d]", ft_printf("{%S}", L"我是一只猫。"));
+	//	printf("[%d]", printf("%030S", L"我是一只猫。"));
+	//	printf("[%d]", ft_printf("{%030S}", L"我是一只猫。"));
 	/*
-	printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S",
-	L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
-	L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");	
-	*/
-//	p = printf("%030S", L"我是一只猫。");
-//	ft_p =ft_printf("%030S", L"我是一只猫。");
-//	printf("ft_p est %d et p est %d\n", ft_p, p);
+	   printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S",
+	   L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
+	  :wq
+	  L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");	
+	   */
+	//	p = printf("%030S", L"我是一只猫。");
+	//	ft_p =ft_printf("%030S", L"我是一只猫。");
+	//	printf("ft_p est %d et p est %d\n", ft_p, p);
 	//printf("{%-30S}", L"我是一只猫。");
 	/*
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   ft_p = ft_printf("%05p", 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%05p", 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   */
+	/*
+	   p = printf("%.0p, %.p\n", NULL, 0);
+	   ft_p = ft_printf("%.0p, %.p\n", 0, 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%0p, %.p\n", 9, 9);
+	   ft_p = ft_printf("%0p, %.p\n", 9, 9);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%10p, %10.p\n", NULL, 0);
+	   ft_p = ft_printf("%10p, %10.p\n", 0, 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%.5p\n", 0);
+	   ft_p = ft_printf("%.5p\n", 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%2.9p\n", 1234);
+	   ft_p = ft_printf("%2.9p\n", 1234);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%9.2p\n", 1234);
+	   ft_p = ft_printf("%9.2p\n", 1234);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%2.9p\n", 1234567);
+	   ft_p = ft_printf("%2.9p\n", 1234567);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%05p\n", 0);
+	   ft_p = ft_printf("%05p\n", 0);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%05p\n", 3);
+	   ft_p = ft_printf("%05p\n", 3);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("%05X\n", 3);
+	   ft_p = ft_printf("%05X\n", 3);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("{%-15Zuw}", 123);
+	   ft_p = ft_printf("{%-15Zuw}", 123);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   p = printf("{%-.15Zuw}", 123);
+	   ft_p = ft_printf("{%-.15Zuw}", 123);
+	   printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	   */
+	//ft_p = ft_printf("%C", L'猫');
+	/*
 	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	ft_p = ft_printf("%05p", 0);
+	p = printf("[%C]\n", L'δ');
+	p = printf("[%C]", L'猫');
+	ft_p = ft_printf("[%C]\n", L'猫');
 	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%05p", 0);
+	p = printf("[%C]\n", L'요');
+	ft_p = ft_printf("[%C]\n", L'猫');
+	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	p = printf("[%C]\n", L'莨');
+	ft_printf("[%C]\n", L'猫');
+	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	p = printf("[%C]\n", L'ي');
+	ft_p = ft_printf("[%C]\n", L'猫');
 	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
 	*/
-	p = printf("%.0p, %.p\n", NULL, 0);
-	ft_p = ft_printf("%.0p, %.p\n", 0, 0);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%0p, %.p\n", 9, 9);
-	ft_p = ft_printf("%0p, %.p\n", 9, 9);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%10p, %10.p\n", NULL, 0);
-	ft_p = ft_printf("%10p, %10.p\n", 0, 0);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%.5p\n", 0);
-	ft_p = ft_printf("%.5p\n", 0);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%2.9p\n", 1234);
-	ft_p = ft_printf("%2.9p\n", 1234);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%9.2p\n", 1234);
-	ft_p = ft_printf("%9.2p\n", 1234);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%2.9p\n", 1234567);
-	ft_p = ft_printf("%2.9p\n", 1234567);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%05p\n", 0);
-	ft_p = ft_printf("%05p\n", 0);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%05p\n", 3);
-	ft_p = ft_printf("%05p\n", 3);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("%05X\n", 3);
-	ft_p = ft_printf("%05X\n", 3);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("{%-15Zuw}", 123);
-	ft_p = ft_printf("{%-15Zuw}", 123);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
-	p = printf("{%-.15Zuw}", 123);
-	ft_p = ft_printf("{%-.15Zuw}", 123);
-	printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
 	//p = printf("{%-015Zuw}", 123);
 	//ft_p = ft_printf("{%-015Zuw}", 123);
+	//printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
+	/*
+	p = printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S\n",
+			L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
+			L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");
+	*/
+	ft_p = ft_printf("%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S|%S\n",
+			L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
+			L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");
 	//printf("ft_p est [%d] et p est [%d]\n", ft_p, p);
 	return (0);
 }

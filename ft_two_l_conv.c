@@ -6,7 +6,7 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 16:56:33 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/09 18:51:00 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/10 17:34:05 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		ft_two_l_conv(char *str)
 		return (12);
 	else if (str[0] == 'X')
 		return (13);
-	else if (str[0] == 'c')
+	else if (str[0] == 'c' || str[0] == 'C')
 		return (14);
-	else if (str[0] == 's')
+	else if (str[0] == 's' || str[0] == 'S')
 		return (15);
 	else if (str[0] == 'D')
 		return (16);
