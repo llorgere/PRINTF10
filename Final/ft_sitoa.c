@@ -1,14 +1,20 @@
-#include <stdlib.h>
-#include <stdarg.h>
-#include <inttypes.h>
-#include <stddef.h>
-#include <wchar.h>
-#include <sys/types.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sitoa.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/11 02:26:58 by llorgere          #+#    #+#             */
+/*   Updated: 2018/04/11 02:27:59 by llorgere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 static char	*ft_sitoa_min(short int n)
 {
-	int			j;
+	int		j;
 	char	*tab;
 
 	j = 0;

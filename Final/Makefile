@@ -6,7 +6,7 @@
 #    By: llorgere <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/15 12:55:31 by llorgere          #+#    #+#              #
-#    Updated: 2018/04/10 22:36:38 by llorgere         ###   ########.fr        #
+#    Updated: 2018/04/11 02:22:41 by llorgere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libftprintf.a
 SRC = ft_printf.c \
 	  ft_error_flag.c \
 	  ft_strndups.c \
+	  ft_p_conv_null.c \
 	  ft_what_conv.c \
 	  ft_one_conv.c \
 	  ft_two_l_conv.c \

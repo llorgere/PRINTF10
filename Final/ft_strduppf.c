@@ -6,17 +6,17 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 18:00:27 by llorgere          #+#    #+#             */
-/*   Updated: 2017/06/17 16:50:08 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/11 01:57:22 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char	*ft_strduppf_null()
+static char	*ft_strduppf_null(void)
 {
 	char	*tab;
 
-	if(!(tab = malloc(sizeof(char)* 7)))
+	if (!(tab = malloc(sizeof(char) * 7)))
 		return (NULL);
 	tab[0] = '(';
 	tab[1] = 'n';

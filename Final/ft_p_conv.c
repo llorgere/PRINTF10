@@ -6,24 +6,11 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 18:14:28 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/11 01:32:26 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/11 02:21:07 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-static char		*ft_p_conv_null(void)
-{
-	char	*tab;
-
-	if (!(tab = (char *)malloc(sizeof(*tab) * (4))))
-		return (0);
-	tab[0] = '0';
-	tab[1] = 'x';
-	tab[2] = '0';
-	tab[3] = '\0';
-	return (tab);
-}
 
 static char		*ft_p_conv_null_nopre(void)
 {
@@ -119,7 +106,7 @@ char			*ft_p_conv(long long unsigned int n, t_flag flag)
 		i = i / 16;
 		j++;
 	}
-	if(flag.preci > j)
+	if (flag.preci > j)
 		tab = ft_init_str_p(j, n, flag);
 	else
 		tab = ft_init_str(j);

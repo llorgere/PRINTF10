@@ -6,17 +6,17 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 18:00:27 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/11 01:31:35 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/11 03:00:41 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char	*ft_wchardup_null()
+static char	*ft_wchardup_null(void)
 {
 	char	*tab;
 
-	if(!(tab = malloc(sizeof(char)* 7)))
+	if (!(tab = malloc(sizeof(char) * 7)))
 		return (NULL);
 	tab[0] = '(';
 	tab[1] = 'n';
@@ -27,107 +27,81 @@ static char	*ft_wchardup_null()
 	tab[6] = '\0';
 	return (tab);
 }
-/*
-   static char	*ft_special_uni(wchar_t *s, char *moc, int *i, int *j)
-   {
-   char	*tmp;
-   char	*tmpm;
-   int		len;
-   int		lend;
 
-   lend = 0;
-   len = 0;
-   printf("rentre dans uni\n");
-   tmp = ft_uniconv(ft_uitoa_bin(s[*j]));
-   lend = (ft_strlen(tmp) + *i);
-   if(!(tmpm = malloc(sizeof(wint_t) * lend)))
-   return (NULL);
-   while (len < *j )
-   {
-   tmpm[len] = moc[len];
-   len++;
-   }
-   printf("1 dans uni\n");
- *j = *j + ft_strlen(tmp);
- while (len < *j)
- {
- tmpm[len] = *tmp;
- len++;
- }
- printf("2 dans uni tmpm est %s\n", tmpm);
- *i = lend;
- free(tmp);
- return (tmpm);
- }
- static char	*
+static char	*ft_above(char *moc, wchar_t *s, t_flag *flag, int *j)
+{
+	char	*tmp;
+	char	*tmpm;
 
-*/
-char	*ft_wchardup(wchar_t *s, t_flag *flag)
+	if (!moc)
+	{
+		moc = ft_uniconv(ft_uitoa_bin(s[*j]));
+	}
+	else
+	{
+		tmp = ft_uniconv(ft_uitoa_bin(s[*j]));
+		tmpm = ft_strjoin(moc, tmp);
+		free(moc);
+		moc = tmpm;
+		flag->w = 0;
+		free(tmp);
+	}
+	return (moc);
+}
+
+static char	*ft_below(char *moc, wchar_t *s, int *j)
+{
+	char	*tmp;
+	char	*tmpe;
+
+	if (!moc)
+	{
+		if (!(moc = malloc(sizeof(wint_t) * 2)))
+			return (NULL);
+		moc[0] = s[*j];
+		moc[1] = '\0';
+		j++;
+	}
+	else
+	{
+		if (!(tmpe = malloc(sizeof(wint_t) * 2)))
+			return (NULL);
+		tmpe[0] = s[*j];
+		tmpe[1] = '\0';
+		tmp = ft_strjoin(moc, tmpe);
+		free(moc);
+		moc = tmp;
+		free(tmpe);
+		j++;
+	}
+	return (moc);
+}
+
+char		*ft_wchardup(wchar_t *s, t_flag *flag)
 {
 	int		i;
 	int		j;
 	char	*moc;
-	char	*tmp;
-	char	*tmpm;
-	char	*tmpe;
 
 	moc = NULL;
 	if (s == NULL)
 		return (ft_wchardup_null());
 	i = 0;
 	j = 0;
-	//	printf("wchardup 1 flag.w est [%d]\n", flag->W);
 	while (s[i] != '\0')
 		i++;
-	//if(!(moc = (char*)malloc(sizeof(wint_t) * (i))))
-	//	return (NULL);
 	while (j < i)
 	{
-		if(s[j] > 127 /*&& flag->W == -1*/)
+		if (s[j] > 127)
 		{
-			//tmp = moc;
-			//tmp = ft_special_uni(s, moc, &i, &j);
-			if (!moc)
-			{
-				moc = ft_uniconv(ft_uitoa_bin(s[j]));
-				j++;
-			}
-			else
-			{
-				tmp = ft_uniconv(ft_uitoa_bin(s[j]));
-				tmpm  = ft_strjoin(moc, tmp);
-				free(moc);
-				moc = tmpm;
-				flag->w = 0;
-				j++;
-				free(tmp);
-				//printf("j est %d et i est %d\n", j, i);
-			}
+			moc = ft_above(moc, s, flag, &j);
+			j++;
 		}
 		else
 		{
-			if (!moc)
-			{
-				if(!(moc = malloc(sizeof(wint_t) * 2)))
-					return (NULL);
-				moc[0] = s[j];
-				moc[1] = '\0';
-				j++;
-			}
-			else
-			{
-				if(!(tmpe = malloc(sizeof(wint_t) * 2)))
-					return (NULL);
-				tmpe[0] = s[j];
-				tmpe[1] = '\0';
-				tmp = ft_strjoin(moc, tmpe);
-				free(moc);
-				moc = tmp;
-				free(tmpe);
-				j++;
-			}
+			moc = ft_below(moc, s, &j);
+			j++;
 		}
 	}
-//	moc[j] = '\0';
 	return (moc);
 }

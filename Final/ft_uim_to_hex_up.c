@@ -1,4 +1,15 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uim_to_hex_up.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/11 02:30:35 by llorgere          #+#    #+#             */
+/*   Updated: 2018/04/11 02:31:47 by llorgere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 static char	*ft_uim_to_hex_malloc(uintmax_t n, int j)
@@ -12,7 +23,7 @@ static char	*ft_uim_to_hex_malloc(uintmax_t n, int j)
 		tab[0] = 48;
 	while (n > 0)
 	{
-		if(n % 16 < 10)
+		if (n % 16 < 10)
 			tab[j - 1] = (n % 16) + '0';
 		else
 			tab[j - 1] = (n % 16) + 'A' - 10;

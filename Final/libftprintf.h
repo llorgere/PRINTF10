@@ -6,7 +6,7 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 19:03:54 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/11 01:32:44 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/11 02:20:22 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct
 	char			*tab;
 }					t_spec;
 
+char				*ft_p_conv_null(void);
 char				*ft_strndups(const unsigned char *s, size_t n);
 char				*ft_error_flag(t_flag flag);
 char				*ft_uniconv(char *bin);

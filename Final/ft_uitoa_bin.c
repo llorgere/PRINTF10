@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uitoa_bin.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/11 02:32:29 by llorgere          #+#    #+#             */
+/*   Updated: 2018/04/11 02:32:40 by llorgere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 static char	*ft_uitoa_malloc(unsigned int n, int j)
@@ -32,6 +44,5 @@ char		*ft_uitoa_bin(unsigned int n)
 		i = i / 2;
 		j++;
 	}
-//	printf("i est %d\n", i);
 	return (ft_uitoa_malloc(n, j));
 }
