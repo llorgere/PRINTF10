@@ -6,7 +6,7 @@
 /*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 19:03:54 by llorgere          #+#    #+#             */
-/*   Updated: 2018/04/11 02:20:22 by llorgere         ###   ########.fr       */
+/*   Updated: 2018/04/11 09:20:46 by llorgere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@
 # include <stdio.h>
 # include <limits.h>
 # include <locale.h>
+
+typedef struct
+{
+	int		i;
+	int		j;
+	int		k;
+}			t_int;
+
+typedef struct
+{
+	int		i;
+	int		tmp;
+	int		count;
+}			t_int2;
 
 typedef struct
 {
@@ -74,6 +88,47 @@ typedef struct
 	char			*tab;
 }					t_spec;
 
+char				*ft_add_plus(char *str, int len);
+char				*ft_add_plus0(char *str, t_flag flag, int len);
+char				*ft_add_space0(char *str, t_flag flag, int len);
+char				*ft_add_space(char *str, int len);
+char				*ft_add_preci_empty(void);
+char				*ft_add_dies_o(char *str, int len);
+char				*ft_add_dies_x(char *str, int len);
+char				*ft_add_dies_xup(char *str, int len);
+char				*ft_add_dies_o0(char *str, t_flag flag, int len);
+char				*ft_add_dies_x0_malloc(t_flag flag);
+char				*ft_add_dies_x0(char *str, t_flag flag, int len);
+char				*ft_add_dies_xup0_malloc(t_flag flag);
+char				*ft_add_dies_xup0(char *str, t_flag flag, int len);
+char				*ft_add_dies0(char *str, t_flag flag, int len);
+char				*ft_add_dies(char *str, t_flag flag, int len);
+char				*ft_addw(char *str, t_flag flag, int len);
+char				ft_fill(char *tab, int *i, char c);
+char				*ft_addw0(char *str, t_flag flag, int len);
+char				*ft_addwmin(char *str, t_flag flag, int len);
+char				*ft_addwf0(char *str, t_flag flag, int len);
+char				*ft_addwf(char *str, t_flag flag, int len);
+char				*ft_addwp(char	*str, t_flag flag, int len);
+char				*ft_winopr(char *str, t_flag flag, int len);
+char				*ft_nowipr_next_2(char **str, t_flag flag, int *i);
+char				*ft_nowipr_next_3(char *str, char *tab);
+char				*ft_nowipr_next(char *str, t_flag flag, int len);
+char				*ft_nowipr_prev(t_flag flag, char *str);
+char				*ft_nowipr(char *str, t_flag flag, int len);
+char				*ft_nowinopr(char *str, t_flag flag, int len);
+char				*ft_wipr(char *str, t_flag flag, int len);
+char				*ft_flag_use(char *str, t_flag flag);
+t_spec				ft_special_c(char *str, t_flag flag);
+t_flag				ft_arg_total(t_flag flag, t_int2 *a, char *tab);
+t_flag				ft_arg_first(t_flag flag, t_int2 *a, char *tab);
+t_flag				ft_arg_second(t_flag flag, t_int2 *a, char *tab);
+t_flag				ft_arg_third(t_flag flag, t_int2 *a, char *tab);
+t_flag				ft_arg_fourth(t_flag flag, t_int2 *a, char *tab);
+t_flag				ft_arg_fifth(t_flag flag, t_int2 *a, char *tab);
+t_int2				ft_arg_sixth(t_int2 a, char *tab);
+t_flag				ft_arg_seventh(t_flag flag, t_int2 *a, char *tab);
+t_wii				ft_wii_init(int sizetab);
 char				*ft_p_conv_null(void);
 char				*ft_strndups(const unsigned char *s, size_t n);
 char				*ft_error_flag(t_flag flag);

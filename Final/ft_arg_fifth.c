@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_arg_fifth.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llorgere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/11 06:37:09 by llorgere          #+#    #+#             */
+/*   Updated: 2018/04/11 06:37:12 by llorgere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libftprintf.h"
+
+t_flag	ft_arg_fifth(t_flag flag, t_int2 *a, char *tab)
+{
+	char*tabpw;
+
+	tabpw = NULL;
+	if ((a->count == a->tmp) && tab[a->i] == '.' && flag.preci < 0)
+	{
+		a->count++;
+		if (tab[a->i + 1] <= '0' || tab[a->i + 1] > '9')
+		{
+			flag.preci = 0;
+			a->i++;
+		}
+		else
+		{
+			a->i++;
+			a->tmp = a->i;
+			while (tab[a->i] > '0' && tab[a->i] <= '9')
+				a->i++;
+			tabpw = ft_strndup(tab + a->tmp, a->i - a->tmp + 1);
+			flag.preci = ft_atoi(tabpw);
+			a->tmp = a->count--;
+			free(tabpw);
+		}
+	}
+	return (flag);
+}

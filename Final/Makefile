@@ -6,12 +6,44 @@
 #    By: llorgere <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/15 12:55:31 by llorgere          #+#    #+#              #
-#    Updated: 2018/04/11 02:22:41 by llorgere         ###   ########.fr        #
+#    Updated: 2018/04/11 09:37:13 by llorgere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 SRC = ft_printf.c \
+	  ft_add_dies.c \
+	  ft_arg_first.c \
+	  ft_add_dies0.c \
+	  ft_add_dies_o.c \
+	  ft_add_dies_o0.c \
+	  ft_add_dies_x0.c \
+	  ft_add_dies_xup.c \
+	  ft_add_dies_xup0.c \
+	  ft_add_plus.c \
+	  ft_add_plus0.c \
+	  ft_add_preci_empty.c \
+	  ft_add_space.c \
+	  ft_addw.c \
+	  ft_addw0.c \
+	  ft_addwf.c \
+	  ft_addwf0.c \
+	  ft_addwmin.c \
+	  ft_addwp.c \
+	  ft_winopr.c \
+	  ft_wipr.c \
+	  ft_fill.c \
+	  ft_nowinopr.c \
+	  ft_nowipr.c \
+	  ft_wii_init.c \
+	  ft_arg_first.c \
+	  ft_arg_second.c \
+	  ft_arg_third.c \
+	  ft_arg_fourth.c \
+	  ft_arg_fifth.c \
+	  ft_arg_sixth.c \
+	  ft_arg_seventh.c \
+	  ft_arg_total.c \
 	  ft_error_flag.c \
 	  ft_strndups.c \
 	  ft_p_conv_null.c \
